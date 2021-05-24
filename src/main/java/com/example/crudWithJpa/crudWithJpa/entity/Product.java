@@ -23,6 +23,16 @@ public class Product {
 	public int getId() {
 		return id;
 	}
+	public Product(String name, int quantity, double price) {
+		super();
+		this.name = name;
+		this.quantity = quantity;
+		this.price = price;
+	}
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public void setId(int id) {
 		this.id = id;
 	}
