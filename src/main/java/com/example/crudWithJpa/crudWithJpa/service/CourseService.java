@@ -1,5 +1,7 @@
 package com.example.crudWithJpa.crudWithJpa.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +22,11 @@ public class CourseService {
 	public Course saveCourse(Course course) {
 		return repository.save(course);
 	}
+	
+	public List<Course> saveCourses(List<Course> courses) {
+		return repository.saveAll(courses);
+	}
+	
 	
 	public String deleteCourse(Long id) {
 		repository.deleteById(id);

@@ -3,26 +3,32 @@ package com.example.crudWithJpa.crudWithJpa.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "COURSE_TBL")
-public class Course {
+@Table(name = "STUDENT_TBL")
+public class Student {
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	public Course() {
+	private String name;
+	
+	@OneToOne
+	private Passport passport;
+	
+	public Student() {
 		super();
 	}
 
-	public Course(Long id, String name) {
+	public Student(Long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
 	
-	public Course(String name) {
+	public Student(String name) {
 		super();
 		this.name = name;
 	}
@@ -43,7 +49,12 @@ public class Course {
 	public Long getId() {
 		return id;
 	}
-
-	private String name;
-
+	
+	public Passport getPassport() {
+		return this.passport;
+	}
+	
+	public void setPassport(Passport passport) {
+		this.passport = passport;
+	}
 }

@@ -18,7 +18,6 @@ import com.example.crudWithJpa.crudWithJpa.entity.Course;
 import com.example.crudWithJpa.crudWithJpa.entity.Product;
 
 @SpringBootTest
-@DirtiesContext(classMode = ClassMode.BEFORE_EACH_TEST_METHOD)
 class CrudWithJpaApplicationTests {
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -29,25 +28,25 @@ class CrudWithJpaApplicationTests {
 	@Autowired
 	ProductService productService;
 	
-	@Test
-	void contextLoads() {
-		logger.info("this is running");
-		Course course = courseService.getCourseById(1000L);
-		logger.info(course.toString());
-		assertEquals("English", course.getName());
-	}
-	
-	@Test
-	void testingProduct() {
-		Product product = productService.getProductById(1);
-		assertEquals("name1_updated", product.getName());
-	}
-	
-	@Test 
-	public void deleteById() {
-		productService.deleteProduct(4);
-		assertNull(productService.getProductById(4));
-	}
+//	@Test
+//	void contextLoads() {
+//		logger.info("this is running");
+//		Course course = courseService.getCourseById(1000L);
+//		logger.info(course.toString());
+//		assertEquals("English", course.getName());
+//	}
+//	
+//	@Test
+//	void testingProduct() {
+//		Product product = productService.getProductById(1);
+//		assertEquals("name1_updated", product.getName());
+//	}
+//	
+//	@Test 
+//	public void deleteById() {
+//		productService.deleteProduct(4);
+//		assertNull(productService.getProductById(4));
+//	}
 
 
 }
